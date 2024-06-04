@@ -1,0 +1,2 @@
+
+includes screen implementations in subdirectories representing individual applets within parent application
