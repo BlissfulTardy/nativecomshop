@@ -2,10 +2,13 @@
 // TODO: Implement
 
 // IMPORT Dependencies
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { NavigationContainer } from "@react-navigation/native";
+
 // IMPORT Provider & Store // TODO whether required here or down
 import { Provider } from "react-redux"
 import store from "../../store/store"
+
 // IMPORT Firebase Auth
 // import useAuth from ... // TODO! import when ready
 
@@ -38,8 +41,16 @@ const RoutingAuth = () => {
 	// if (init) return null;
 
 	// TODO! utilizing dummy auth handling until final implementation ready
-	setUser(true);
+  useEffect(() => {
+    setUser(true);
+  }, []);
 
+	// TODO! utilizing dummy theme switch until proper functionality is available
+	useEffect(() => {
+		
+	})
+
+	// TODO! revise implementation due jigged rendering behaviour
 	return(
 		// TODO! whether or if can move provider down for safety
 		<Provider store={store}>

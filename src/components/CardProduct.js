@@ -6,6 +6,7 @@ import React from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 
 // IMPORT STYLES
+import EStyleSheet from 'react-native-extended-stylesheet';
 import PROJECT_STYLES from './../../styles';
 
 // IMPORT IONICONS

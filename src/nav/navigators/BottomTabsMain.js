@@ -21,6 +21,10 @@ import ScreenMainSearch from '../../screens/main/primary/ScreenMainSearch';
 import ScreenMainCart from '../../screens/main/primary/ScreenMainCart';
 import ScreenMainProfile from '../../screens/main/primary/ScreenMainProfile';
 
+// IMPORT HEADER
+import HeaderCommon from '../../components/HeaderCommon';
+// TODO reconsider rendering application header here
+
 // CREATE TAB
 const Tab = createBottomTabNavigator();
 
@@ -34,9 +38,13 @@ const BottomTabsMain = () => {
         /* PAGE */
         <View>
 
+          {/* //TODO! inspect why this header would not appear */}
+          {/* MAIN APPLET HEADER */}
+          <HeaderCommon/>
+
           {/* TAB NAVIGATION COMPOSITION */}
           <NavigationContainer
-          style={PROJECT_STYLES.containers.pageTabs} // TODO! validate, reconsider and fix later when ready
+          style={PROJECT_STYLES.containers['containerPageTabs']}
           >
 
             {/* TAB NAVIGATOR */}

@@ -144,7 +144,7 @@ export const panelHandleCart = EStyleSheet.create({
   },
   buttonCheckoutCart: {
     width: '40%',
-    backgroundColor: '$colorAppPrimary', // blue
+    backgroundColor: '$colorPrimary', // blue
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 8,

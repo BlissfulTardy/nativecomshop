@@ -65,7 +65,7 @@ export const panelQuantityInCart = EStyleSheet.create({
 
   buttonPanelQuantityInCart: {
     height: 30,
-    backgroundColor: '$colorAppPrimary',
+    backgroundColor: '$colorPrimary',
     paddingHorizontal: 15,
     paddingVertical: 5,
     borderRadius: 5,

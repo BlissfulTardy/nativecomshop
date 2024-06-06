@@ -4,6 +4,7 @@ import { useState } from 'react';
 // IMPORT React-Native
 import { View, Text, Modal, Pressable, TextInput, ScrollView } from 'react-native';
 // IMPORT Styles
+import EStyleSheet from 'react-native-extended-stylesheet';
 import PROJECT_STYLES from '../../styles';
 // IMPORT Components
 import SectionSerializerLabeled from './SectionSerializerLabeled';

@@ -105,7 +105,10 @@ const StackProfile = () => {
 // DEFINE main tabs navigator
 const NavigatorMain = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer
+    // TODO* passing below for enabling nested navigation containment
+    independent={true}
+    >
       <Tab.Navigator
         screenOptions={({ route }) => ({
           headerShown: false, // disabling as a fixed header exists

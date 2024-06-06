@@ -7,6 +7,7 @@ import React from 'react';
 // Import React-Native
 import { View, Text, Pressable } from 'react-native';
 // Import Styles
+import EStyleSheet from 'react-native-extended-stylesheet';
 import PROJECT_STYLES from '../../../../styles';
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -30,7 +31,7 @@ const ScreenMainProfile = () => {
     }>
       <Text style={PROJECT_STYLES.typography['labelLoggedUser']}>Logged in as: example@example.com</Text>
 
-      // TODO! reconsider implementing this as a standalone component
+      {/*// TODO! reconsider implementing this as a standalone component*/}
       <View style={menuProfile.containerMenuProfile}>
         <Pressable onPress={() => navigation.navigate('ScreenUserinfo')} style={menuProfile.itemMenuProfile}>
           <Text style={menuProfile.textItemMenuProfile}>User Information</Text>
@@ -66,7 +67,7 @@ export const menuProfile = EStyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 15,
     marginVertical: '2.5%',
-    backgroundColor: '$colorAppPrimary',
+    backgroundColor: '$colorPrimary',
     borderRadius: 5,
   },
   textItemMenuProfile: {

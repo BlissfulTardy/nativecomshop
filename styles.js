@@ -33,20 +33,7 @@ const basic = EStyleSheet.create({
  */
 
 const theming = EStyleSheet.create({
-	defaultLight:
-	{
-		// fontFamily: '',
-		color: '$colorTextLight',
-		backgroundColor: '$colorBackgroundLight',
-		// ...
-	},
-	defaultDark:
-	{
-		// fontFamily: '',
-		color: '$colorTextDark',
-		backgroundColor: '$colorBackgroundDark',
-		// ...
-	}
+	// TODO reconsider whether this should stay here or go
 })
 
 /**
@@ -69,7 +56,7 @@ const typography = EStyleSheet.create({
 	// TODO implement common title, label and paragraph types styling here
   labelSectionDefault: { // TODO reconsider mitigating to own component
     paddingVertical: 20, // Temporary
-    color: '$colorPrimaryDark',
+    color: '$colorPrimary',
     fontSize: 32,
     fontWeight: 'bold',
     alignSelf: 'center',
@@ -82,7 +69,7 @@ const typography = EStyleSheet.create({
 	labelTitleDefault: { // TODO reconsider
     fontSize: 26,
     fontWeight: 'bold',
-    color: '$colorAppPrimary',
+    color: '$colorPrimary',
     textAlign: 'center',
   },
 	labelLoggedUser: { // TODO reconsider mitigating to own component or elsewhere
@@ -128,6 +115,7 @@ const containers = EStyleSheet.create({
 		width: '100vw',
 		height: '100vh',
 		// not introducing padding here as this is the mother container
+		backgroundColor: 'red', // TODO:TEST
 	},
 	containerDefault: { // TODO! consider what this undefined def should b
 		// TODO implement as required
@@ -157,7 +145,7 @@ const containers = EStyleSheet.create({
   },
 	headerCommon: { // TODO reconsider
     height: '$heightHeader',
-    backgroundColor: '$colorPrimaryDark', // TODO reconsider
+    backgroundColor: '$colorPrimary', // TODO reconsider
     justifyContent: 'center',
     alignItems: 'center',
   },

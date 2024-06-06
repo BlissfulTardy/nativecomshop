@@ -17,7 +17,7 @@ const ButtonGridCategories = ({ item, onPress }) => {
         { 
           backgroundColor: pressed
           ? '#000277'
-          : EStyleSheet.value('$colorPrimaryDark'), // change on press // TODO reconsider
+          : EStyleSheet.value('$colorPrimary'), // change on press // TODO reconsider
         }
       ]}
       onPress={() => onPress(item)}
@@ -41,7 +41,7 @@ export const buttonGridCategories = EStyleSheet.create({
     padding: 10,
     margin: 5,
     borderRadius: 10,
-    backgroundColor: '$colorAppPrimary',
+    backgroundColor: '$colorPrimary',
     alignItems: 'center',
     justifyContent: 'center',
   },

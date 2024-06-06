@@ -23,7 +23,10 @@ const Stack = createStackNavigator();
 const NavigatorAuth = ({ states, utils, data }) => {
   return (
     // TODO whether to introduce screen container here
-    <NavigationContainer>
+    <NavigationContainer
+    // TODO* passing below for enabling nested navigation containment
+    independent={true}
+    >
       <Stack.Navigator>
         <Stack.Screen
           name="Login"
