@@ -1,19 +1,19 @@
 
-// TODO Implement
-
 // IMPORT Redux
 import { createStore, combineReducers } from 'redux';
 
-// TODO* IMPORT Reducers
+// IMPORT Reducers
+// TODO! import reducers when ready
+import reducerCart from './reducers/reducerCart';
+import reducerProduct from './reducers/reducerProduct';
 
-// TODO* ROOT REDUCER
-const rootReducer = combineReducers(
-    {
-        // TODO introduce reducers
-    }
-)
+// ROOT REDUCER
+const reducerRoot = combineReducers({
+  cart: reducerCart,
+  products: reducerProduct,
+});
 
-// STORE
-const store = createStore(rootReducer);
+// STORE initiation
+const store = createStore(reducerRoot);
 
 export default store;

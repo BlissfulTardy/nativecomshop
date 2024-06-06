@@ -1,0 +1,2 @@
+This section is intended to include purpose specific implementations
+Implementations from 'common' section my be imported and utilized here

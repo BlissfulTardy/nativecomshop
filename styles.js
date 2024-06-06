@@ -19,12 +19,12 @@ import EStyleSheet from "react-native-extended-stylesheet";
  * basicmost styling and containment definitions to fallback to
  */
 const basic = EStyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
+	container: {
+			flex: 1,
+			backgroundColor: '#fff',
+			alignItems: 'center',
+			justifyContent: 'center',
+		},
 })
 
 /**
@@ -33,20 +33,20 @@ const basic = EStyleSheet.create({
  */
 
 const theming = EStyleSheet.create({
-    defaultLight:
-    {
-        // fontFamily: '',
-        color: '$colorTextLight',
-        backgroundColor: '$colorBackgroundLight',
-        // ...
-    },
-    defaultDark:
-    {
-        // fontFamily: '',
-        color: '$colorTextDark',
-        backgroundColor: '$colorBackgroundDark',
-        // ...
-    }
+	defaultLight:
+	{
+		// fontFamily: '',
+		color: '$colorTextLight',
+		backgroundColor: '$colorBackgroundLight',
+		// ...
+	},
+	defaultDark:
+	{
+		// fontFamily: '',
+		color: '$colorTextDark',
+		backgroundColor: '$colorBackgroundDark',
+		// ...
+	}
 })
 
 /**
@@ -55,10 +55,10 @@ const theming = EStyleSheet.create({
  */
 
 const palette = EStyleSheet.create({
-    default:
-    {
+	default:
+	{
 
-    }
+	}
 })
 
 /**
@@ -66,7 +66,7 @@ const palette = EStyleSheet.create({
  * define text classifications, their behaviours & attributes
  */
 const typography = EStyleSheet.create({
-    // TODO implement common title, label and paragraph types styling here
+	// TODO implement common title, label and paragraph types styling here
 })
 
 /**
@@ -74,7 +74,7 @@ const typography = EStyleSheet.create({
  * define visual characteristics of various common clickable elements
  */
 const clickables = EStyleSheet.create({
-    // TODO implement common clickable elements styling here
+	// TODO implement common clickable elements styling here
 })
 
 /**
@@ -82,7 +82,7 @@ const clickables = EStyleSheet.create({
  * define common visual elements such as pictures and icons
  */
 const visuals = EStyleSheet.create({
-    // TODO implement common visual elements styling here
+	// TODO implement common visual elements styling here
 })
 
 /**
@@ -90,8 +90,8 @@ const visuals = EStyleSheet.create({
  * define common containers behaviour and styling
  */
 const contain = EStyleSheet.create({
-    // TODO implement common container elements and definitions
-    // may include both attributive and specific definitions
+	// TODO implement common container elements and definitions
+	// may include both attributive and specific definitions
 })
 
 /**
@@ -101,7 +101,7 @@ const contain = EStyleSheet.create({
  */
 // TODO decide to whether expand as 7.1 7.2 etc. or keep as is
 const misc = EStyleSheet.create({
-    // TODO implement misc. types of common elements styling here
+	// TODO implement misc. types of common elements styling here
 })
 
 /**
@@ -110,23 +110,23 @@ const misc = EStyleSheet.create({
  */
 // TODO decide to keep or remove
 const spatial = EStyleSheet.create({
-    // TODO implement common spatial utility elements here
+	// TODO implement common spatial utility elements here
 })
 
 ///////////////////////////////////////////////////////////////////////////////
 // COMBINE AND EXPORT STYLES
 const styles =
 {
-    // TODO! include all stylesheets instances defined above here
-    basic,
-    theme: theming,
-    palette,
-    typography,
-    clickables,
-    visuals,
-    contain,
-    misc,
-    spatial,
+	// TODO! include all stylesheets instances defined above here
+	basic,
+	theme: theming,
+	palette,
+	typography,
+	clickables,
+	visuals,
+	contain,
+	misc,
+	spatial,
 }
 
 export default styles;

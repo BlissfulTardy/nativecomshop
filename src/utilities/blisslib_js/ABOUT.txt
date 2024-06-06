@@ -1,0 +1,5 @@
+
+This is a collection of my own utility classes,
+intended to be utilized across multiple projects
+
+RESEARCH AND IMPLEMENT A METHODOLOGY TO UTILIZE THIS EFFICIENTLY

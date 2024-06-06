@@ -1,0 +1,2 @@
+Consider implementing a LocalCrudOperator to extend the functionality
+to a collection of interconnected SQL style table ecosystem

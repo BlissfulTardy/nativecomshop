@@ -1,17 +1,25 @@
 
 // IMPORT Dependency
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
-// IMPORT Style
+// IMPORT Component
+import RoutingAuth from './src/nav/navigators/RoutingAuth';
+
+// SETUP Application Styling Global Variables
+///////////////////////////////////////////////////////////////////////////////
+// IMPORT StyleSheet & Styles
+import EStyleSheet from 'react-native-extended-stylesheet';
 import styles from './styles'; // TODO Revise when its implementation done
-// BUILD Style
+// BUILD Style at top level
 EStyleSheet.build(
   { // TODO Introduce global CSS variables here when ready: $variable: 'value'
     /* [0] TESTING */
     //$outline: 1 // TEST
 
     /* [1] THEMING */
+    // TODO decide whether and how to implement light/dark theme
+    // TODO decide whether different light/dark colors should apply to pri/sec/ter
     // COLOR: BACKGROUND
     $colorBackgroundLight: '#ddd',
     $colorBackgroundDark: '#222',
@@ -29,10 +37,10 @@ EStyleSheet.build(
     $colorPrimaryDark: '0059bb',
     // COLOR: SECONDARY
     $colorSecondaryLight: '', // TODO determine appropriate
-    $colorSecondaryDark: '',
+    $colorSecondaryDark: '', // TODO determine appropriate
     // COLOR: TERTIARY
     $colorTertiaryLight: '', // TODO determine appropriate
-    $colorTertiaryDark: '',
+    $colorTertiaryDark: '', // TODO determine appropriate
     // COLOR: BORDER
     $colorBorderLight: '', // TODO determine appropriate
     $colorBorderDark: '', // TODO determine appropriate
@@ -46,21 +54,21 @@ EStyleSheet.build(
 
     // TODO? consider another scaling variable for accessibility settings later on
     // [3] TYPEFACE define main text font characteristics
-    $fontFamily: '', // TODO determine appropriate
+    $fFamily: '', // TODO determine appropriate
     // font sizes
-    $fontSize1: '', // TODO determine appropriate
-    $fontSize2: '', // TODO determine appropriate
-    $fontSize3: '', // TODO determine appropriate
-    $fontSize4: '', // TODO determine appropriate
-    $fontSize5: '', // TODO determine appropriate
-    $fontSize6: '', // TODO determine appropriate
-    // font heights
-    $fontHeight1: '', // TODO determine appropriate
-    $fontHeight2: '', // TODO determine appropriate
-    $fontHeight3: '', // TODO determine appropriate
-    $fontHeight4: '', // TODO determine appropriate
-    $fontHeight5: '', // TODO determine appropriate
-    $fontHeight6: '', // TODO determine appropriate
+    $fSize1: '', // TODO determine appropriate
+    $fSize2: '', // TODO determine appropriate
+    $fSize3: '', // TODO determine appropriate
+    $fSize4: '', // TODO determine appropriate
+    $fSize5: '', // TODO determine appropriate
+    $fSize6: '', // TODO determine appropriate
+    // font heights // TODO determine whether different font heights are necessary
+    $fHeight1: '', // TODO determine appropriate
+    $fHeight2: '', // TODO determine appropriate
+    $fHeight3: '', // TODO determine appropriate
+    $fHeight4: '', // TODO determine appropriate
+    $fHeight5: '', // TODO determine appropriate
+    $fHeight6: '', // TODO determine appropriate
 
     // [4] SPACING
     // MARGIN
@@ -80,13 +88,12 @@ EStyleSheet.build(
 
   }
 )
+///////////////////////////////////////////////////////////////////////////////
 
 export default function App() {
+  // TODO implement variables and logic if required
   return (
-    <View style={styles.basic.container}>
-      {/* // TODO implement this */}
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // TODO wrap with provider or misc if required
+    <RoutingAuth/> // main router component handling user login status
   );
 }
