@@ -1,7 +1,6 @@
 
 // IMPORT Dependency
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 // IMPORT Component
 import RoutingAuth from './src/nav/navigators/RoutingAuth';
@@ -10,7 +9,7 @@ import RoutingAuth from './src/nav/navigators/RoutingAuth';
 ///////////////////////////////////////////////////////////////////////////////
 // IMPORT StyleSheet & Styles
 import EStyleSheet from 'react-native-extended-stylesheet';
-import styles from './styles'; // TODO Revise when its implementation done
+import PROJECT_STYLES from './styles'; // TODO Revise when its implementation done
 // BUILD Style at top level
 EStyleSheet.build(
   { // TODO Introduce global CSS variables here when ready: $variable: 'value'
@@ -86,6 +85,13 @@ EStyleSheet.build(
 
     // TODO! introduce further global variables if required
 
+    // [5] SPECIFICS // TODO? reorganize this and establish a global structure when done with
+    $heightHeader: '60px', // TODO reconsider
+    $heightTabbar: '60px', // TODO reconsider
+    $paddingPageDefault: '10px', // TODO reconsider
+    $colorTabbarTintActive: '#007bff', // TODO reconsider
+    $colorTabbarTintInactive: '#bbb' // TODO reconsider
+
   }
 )
 ///////////////////////////////////////////////////////////////////////////////
@@ -94,6 +100,9 @@ export default function App() {
   // TODO implement variables and logic if required
   return (
     // TODO wrap with provider or misc if required
-    <RoutingAuth/> // main router component handling user login status
+    // TODO reconsider wrapping with main screen component at this level
+    <View style={PROJECT_STYLES.containers['containerScreen']}>
+      <RoutingAuth/>
+    </View>
   );
 }

@@ -8,7 +8,7 @@ import NavigatorMain from '../navigators/NavigatorMain';
 // APPLET main component
 const AppletMain = ({ states, utils, data }) => {
   return (
-    // TODO whether to introduce screen container here
+    // TODO whether to introduce a container container here
     <NavigatorMain
     states={null}
     utils={null}

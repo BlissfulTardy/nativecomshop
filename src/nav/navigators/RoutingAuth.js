@@ -7,7 +7,7 @@ import React, { useState } from "react"
 import { Provider } from "react-redux"
 import store from "../../store/store"
 // IMPORT Firebase Auth
-// import useAuth from ... // TODO import when ready
+// import useAuth from ... // TODO! import when ready
 
 // IMPORT Routers
 import AppletAuth, { statesAuth, utilsAuth, dataAuth } from "../applets/AppletAuth";
@@ -38,7 +38,7 @@ const RoutingAuth = () => {
 	// if (init) return null;
 
 	// TODO! utilizing dummy auth handling until final implementation ready
-	setUser(null);
+	setUser(true);
 
 	return(
 		// TODO! whether or if can move provider down for safety

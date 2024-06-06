@@ -6,7 +6,10 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 // IMPORT Screens
-// TODO! import screens when ready
+import ScreenAuthLogin from "../../screens/auth/ScreenAuthLogin";
+import ScreenAuthPassword from "../../screens/auth/ScreenAuthPassword";
+import ScreenAuthProcess from "../../screens/auth/ScreenAuthProcess";
+import ScreenAuthRegister from "../../screens/auth/ScreenAuthRegister";
 // TODO: Determine whether any other imports are required here
 
 // DECLARE Navigation Stack

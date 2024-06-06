@@ -13,16 +13,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 // IMPORT STYLES
-import styles from '../../../styles';
+import PROJECT_STYLES from '../../../styles';
 
 // IMPORT MAIN SCREENS
-// TODO! import when ready
-/*
-import ScreenMainHome from '../main/ScreenMainHome';
-import ScreenMainSearch from '../main/ScreenMainSearch';
-import ScreenMainCart from '../main/ScreenMainCart';
-import ScreenMainProfile from '../main/ScreenMainProfile';
-*/
+import ScreenMainHome from '../../screens/main/primary/ScreenMainHome';
+import ScreenMainSearch from '../../screens/main/primary/ScreenMainSearch';
+import ScreenMainCart from '../../screens/main/primary/ScreenMainCart';
+import ScreenMainProfile from '../../screens/main/primary/ScreenMainProfile';
 
 // CREATE TAB
 const Tab = createBottomTabNavigator();
@@ -39,7 +36,7 @@ const BottomTabsMain = () => {
 
           {/* TAB NAVIGATION COMPOSITION */}
           <NavigationContainer
-          style={styles.containers.pageTabs} // TODO! validate, reconsider and fix later when ready
+          style={PROJECT_STYLES.containers.pageTabs} // TODO! validate, reconsider and fix later when ready
           >
 
             {/* TAB NAVIGATOR */}

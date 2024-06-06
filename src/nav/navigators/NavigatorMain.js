@@ -12,25 +12,20 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 // IMPORT Styles
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-// IMPORT Main Screens
-// TODO! import main screens when ready
-/*
-import ScreenMainHome from '../screens/main/ScreenMainHome';
-import ScreenMainSearch from '../screens/main/ScreenMainSearch';
-import ScreenMainCart from '../screens/main/ScreenMainCart';
-import ScreenMainProfile from '../screens/main/ScreenMainProfile';
-*/
-// IMPORT Misc Screens
-// TODO! import misc screens when ready
-/*
-import ScreenDeliveryAddresses from '../screens/misc/ScreenDeliveryAddresses';
-import ScreenCheckout from '../screens/misc/ScreenCheckout';
-import ScreenPaymentMethods from '../screens/misc/ScreenPaymentMethods';
-import ScreenProduct from '../screens/misc/ScreenProduct';
-import ScreenReceipts from '../screens/misc/ScreenReceipts';
-import ScreenUserinfo from '../screens/misc/ScreenUserinfo';
-import ScreenCategoryProducts from '../screens/misc/ScreenCategoryProducts';
-*/
+// IMPORT Main Primary Screens
+import ScreenMainHome from '../../screens/main/primary/ScreenMainHome';
+import ScreenMainSearch from '../../screens/main/primary/ScreenMainSearch';
+import ScreenMainCart from '../../screens/main/primary/ScreenMainCart';
+import ScreenMainProfile from '../../screens/main/primary/ScreenMainProfile';
+
+// IMPORT Main Secondary Screens
+import ScreenMainDeliveryAddresses from '../../screens/main/secondary/ScreenMainDeliveryAddresses';
+import ScreenMainCheckout from '../../screens/main/secondary/ScreenMainCheckout';
+import ScreenMainPaymentMethods from '../../screens/main/secondary/ScreenMainPaymentMethods';
+import ScreenMainProduct from '../../screens/main/secondary/ScreenMainProduct';
+import ScreenMainReceipts from '../../screens/main/secondary/ScreenMainReceipts';
+import ScreenMainUserinfo from '../../screens/main/secondary/ScreenMainUserinfo';
+import ScreenMainCategoryProducts from '../../screens/main/secondary/ScreenMainCategoryProducts';
 
 // DECLARE Tab Navigation
 const Tab = createBottomTabNavigator();
@@ -56,13 +51,13 @@ const StackShared = () => {
       <Stack.Screen name="Cart" component={ScreenMainCart} options={{ headerShown: false }} />
       <Stack.Screen name="Profile" component={ScreenMainProfile} options={{ headerShown: false }} />
       {/* secondary (misc) pages of the application */}
-      <Stack.Screen name="DeliveryAddresses" component={ScreenDeliveryAddresses} options={{ headerShown: false }} />
-      <Stack.Screen name="Checkout" component={ScreenCheckout} options={{ headerShown: false }} />
-      <Stack.Screen name="PaymentMethods" component={ScreenPaymentMethods} options={{ headerShown: false }} />
-      <Stack.Screen name="Product" component={ScreenProduct} options={{ headerShown: false }} />
-      <Stack.Screen name="Receipts" component={ScreenReceipts} options={{ headerShown: false }} />
-      <Stack.Screen name="UserInfo" component={ScreenUserinfo} options={{ headerShown: false }} />
-      <Stack.Screen name="CategoryProducts" component={ScreenCategoryProducts} options={{ headerShow: false }}/>
+      <Stack.Screen name="DeliveryAddresses" component={ScreenMainDeliveryAddresses} options={{ headerShown: false }} />
+      <Stack.Screen name="Checkout" component={ScreenMainCheckout} options={{ headerShown: false }} />
+      <Stack.Screen name="PaymentMethods" component={ScreenMainPaymentMethods} options={{ headerShown: false }} />
+      <Stack.Screen name="Product" component={ScreenMainProduct} options={{ headerShown: false }} />
+      <Stack.Screen name="Receipts" component={ScreenMainReceipts} options={{ headerShown: false }} />
+      <Stack.Screen name="UserInfo" component={ScreenMainUserinfo} options={{ headerShown: false }} />
+      <Stack.Screen name="CategoryProducts" component={ScreenMainCategoryProducts} options={{ headerShow: false }}/>
     </Stack.Navigator>
   );
 };
@@ -129,9 +124,9 @@ const NavigatorMain = () => {
             // You can return any component that you like here!
             return <Icon name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: '#007bff',
-          tabBarInactiveTintColor: '#bbb',
-          tabBarStyle: { height: EStyleSheet.value('$heightAppTabBar') } // TODO! reinstantiate this when global variable ready
+          tabBarActiveTintColor: EStyleSheet.value('$colorTabbarTintActive'),
+          tabBarInactiveTintColor: EStyleSheet.value('$colorTabbarTintInactive'),
+          tabBarStyle: { height: EStyleSheet.value('$heightTabbar') }
         })}
       >
         <Tab.Screen name="Home" component={StackHome} />

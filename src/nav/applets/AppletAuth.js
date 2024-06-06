@@ -8,7 +8,7 @@ import NavigatorAuth from '../navigators/NavigatorAuth';
 // APPLET main component
 const AppletAuth = ({ states, utils, data }) => {
   return (
-    // TODO whether to introduce screen container here
+    // TODO whether to introduce a container container here
     <NavigatorAuth
     states={null}
     utils={null}

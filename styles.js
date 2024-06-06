@@ -67,6 +67,18 @@ const palette = EStyleSheet.create({
  */
 const typography = EStyleSheet.create({
 	// TODO implement common title, label and paragraph types styling here
+  labelSectionDefault: { // TODO reconsider mitigating to own component
+    paddingVertical: 20, // Temporary
+    color: '$colorPrimaryDark',
+    fontSize: 32,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+  },
+	labelHeaderCommon: { // TODO reconsider mitigating to own component
+    color: '#fff', // TODO: adjust color
+    fontSize: 26,
+    fontWeight: 'bold',
+  },
 })
 
 /**
@@ -89,9 +101,45 @@ const visuals = EStyleSheet.create({
  * STYLE [6] CONTAINMENT
  * define common containers behaviour and styling
  */
-const contain = EStyleSheet.create({
+const containers = EStyleSheet.create({
 	// TODO implement common container elements and definitions
 	// may include both attributive and specific definitions
+	containerScreen: {
+		display: 'flex',
+		flexDirection: 'column',
+		flex: 1,
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		width: '100vw',
+		height: '100vh',
+		// not introducing padding here as this is the mother container
+	},
+	containerPageTab: {
+    flex: 1,
+    //padding: '$paddingPageDefault' // TODO reconsider
+	},
+  containerSlider: { // TODO reconsider
+    flex: 1,
+    paddingHorizontal: -10,
+    // paddingVertical: 10,
+  },
+  containerGrid: { // TODO reconsider
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+	containerSectionDefault: { // TODO reconsider
+    flex: 1,
+    paddingHorizontal: 0,
+    // paddingVertical: 20,
+  },
+	headerCommon: { // TODO reconsider
+    height: '$heightHeader',
+    backgroundColor: '$colorPrimaryDark', // TODO reconsider
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 })
 
 /**
@@ -115,21 +163,21 @@ const spatial = EStyleSheet.create({
 
 ///////////////////////////////////////////////////////////////////////////////
 // COMBINE AND EXPORT STYLES
-const styles =
+const PROJECT_STYLES =
 {
 	// TODO! include all stylesheets instances defined above here
 	basic,
-	theme: theming,
+	theming,
 	palette,
 	typography,
 	clickables,
 	visuals,
-	contain,
+	containers,
 	misc,
 	spatial,
 }
 
-export default styles;
+export default PROJECT_STYLES;
 ///////////////////////////////////////////////////////////////////////////////
 
 // TODO! planning to keep component specific styling local to their own .js
