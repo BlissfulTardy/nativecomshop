@@ -1,0 +1,7 @@
+
+1) implement proposed dummy database as LocalCrudTables
+
+2) handle those via either dummyAPI, a DynamicData instance, or both
+consider thoroughly how a clean convention can be followed here
+
+3) ...

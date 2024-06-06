@@ -16,13 +16,9 @@ import { fakeFetchProducts, fakeFetchCategories } from '../../api/fakeFetcher';
 */
 
 // IMPORT COMPONENTS
-// TODO! import updated counterparts when ready
 import SectionSerializerLabeled from '../../../components/SectionSerializerLabeled';
-/*
-import SectionSerializerLabeled from '../../components/common/SectionSerializerLabeled';
-import CardProduct from '../../components/CardProduct';
-import ButtonGridCategory from '../../components/ButtonGridCategory';
-*/
+import CardProduct from '../../../components/CardProduct';
+import ButtonGridCategories from '../../../components/ButtonGridCategories';
 
 // SCREEN COMPONENT
 const ScreenMainHome = () => {
@@ -32,15 +28,21 @@ const ScreenMainHome = () => {
   const [categories, setCategories] = useState([]);
 
   // USE EFFECT IMPLEMENTATION FOR DATA FETCH WITH API
+  // TODO! consider mitigating data fetch entirely elsewhere appropriate
+  // TODO! consider implementing this elsewise however most appropriate
   useEffect(() => {
+
     // FETCH DATA
     const fetchData = async () => {
+
       // FETCH AND SET POPULAR PRODUCTS
-      const fetchedProducts = await (fakeFetchProducts(50));
+      const fetchedProducts = []; // TODO! fetch products here when API method ready
       setProducts(fetchedProducts)
+
       // FETCH AND SET CATEGORIES
-      const fetchedCategories = await (fakeFetchCategories());
+      const fetchedCategories = []; // TODO! fetch products here when API method ready
       setCategories(fetchedCategories)
+
     }
     fetchData();
   }, []);
@@ -69,7 +71,7 @@ const ScreenMainHome = () => {
         title={'Categories'}
         data={categories}
         containerStyle={'containerGrid'}
-        renderItem={ButtonGridCategory}
+        renderItem={ButtonGridCategories}
         keyExtractor={(item, index) => index.toString()}
         horizontal={false}
         numColumns={2}

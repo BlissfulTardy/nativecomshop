@@ -1,0 +1,4 @@
+
+Determine exactly how and where to handle these auth operations,
+including implementation and organization of individual auth
+event handler functions belonging to their respective services

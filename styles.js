@@ -79,6 +79,20 @@ const typography = EStyleSheet.create({
     fontSize: 26,
     fontWeight: 'bold',
   },
+	labelTitleDefault: { // TODO reconsider
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '$colorAppPrimary',
+    textAlign: 'center',
+  },
+	labelLoggedUser: { // TODO reconsider mitigating to own component or elsewhere
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+	labelLink: { // TODO! implement this
+		// TODO implement as required
+	},
 })
 
 /**
@@ -104,7 +118,7 @@ const visuals = EStyleSheet.create({
 const containers = EStyleSheet.create({
 	// TODO implement common container elements and definitions
 	// may include both attributive and specific definitions
-	containerScreen: {
+	containerScreen: { // TODO reconsider
 		display: 'flex',
 		flexDirection: 'column',
 		flex: 1,
@@ -115,9 +129,16 @@ const containers = EStyleSheet.create({
 		height: '100vh',
 		// not introducing padding here as this is the mother container
 	},
+	containerDefault: { // TODO! consider what this undefined def should b
+		// TODO implement as required
+	},
+	containerPageDefault: { // TODO reconsider
+		flex: 1,
+		//padding: '$paddingPageDefault' // TODO reconsider
+	},
 	containerPageTab: {
     flex: 1,
-    //padding: '$paddingPageDefault' // TODO reconsider
+    //padding: '$paddingPageTab' // TODO reconsider
 	},
   containerSlider: { // TODO reconsider
     flex: 1,
@@ -140,6 +161,12 @@ const containers = EStyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+	containerPageCentered: { // TODO reconsider
+    flex: 1,
+    // TODO: revise default alingment behaviour if required later
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 })
 
 /**
@@ -159,6 +186,15 @@ const misc = EStyleSheet.create({
 // TODO decide to keep or remove
 const spatial = EStyleSheet.create({
 	// TODO implement common spatial utility elements here
+	gapVertical10: { // TODO reconsider
+    paddingTop: 10,
+  },
+  gapVeertical15: { // TODO reconsider
+    paddingTop: 15,
+  },
+  paddingDefault: { // TODO reconsider
+    padding: 20,
+  },
 })
 
 ///////////////////////////////////////////////////////////////////////////////
