@@ -1,4 +1,6 @@
 
+// TODO! IS THIS DEPRACATED?
+
 // IMPORT REACT
 import React from 'react';
 
@@ -14,6 +16,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 // IMPORT STYLES
 import PROJECT_STYLES from '../../../styles';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 // IMPORT MAIN SCREENS
 import ScreenMainHome from '../../screens/main/primary/ScreenMainHome';
@@ -44,7 +47,7 @@ const BottomTabsMain = () => {
 
           {/* TAB NAVIGATION COMPOSITION */}
           <NavigationContainer
-          style={PROJECT_STYLES.containers['containerPageTabs']}
+          style={PROJECT_STYLES.containers['containerPageTab']}
           >
 
             {/* TAB NAVIGATOR */}
@@ -66,8 +69,13 @@ const BottomTabsMain = () => {
                   // You can return any component that you like here!
                   return <Icon name={iconName} size={size} color={color} />;
                 },
-                tabBarActiveTintColor: '#007bff',
-                tabBarInactiveTintColor: '#bbb',
+                // TODO consider mitigating this somewhere alongside other styling implementations
+                // TODO! troubleshoot why tab bar background color won't change
+                tabBarStyle: {
+                  backgroundColor: EStyleSheet.value('$colorForeground'),
+                },
+                tabBarActiveTintColor: EStyleSheet.value('$colorTintActive'),
+                tabBarInactiveTintColor: EStyleSheet.value('colorTintInactive'),
               })}
             >
 

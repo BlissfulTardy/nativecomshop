@@ -29,22 +29,22 @@ const NavigatorAuth = ({ states, utils, data }) => {
     >
       <Stack.Navigator>
         <Stack.Screen
-          name="Login"
+          name="PageLogin"
           component={ScreenAuthLogin}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Register"
+          name="PageRegister"
           component={ScreenAuthRegister}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Password"
+          name="PagePassword"
           component={ScreenAuthPassword}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Process"
+          name="PageProcess"
           component={ScreenAuthProcess}
           options={{ headerShown: false }}
         />

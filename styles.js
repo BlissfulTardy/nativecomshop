@@ -11,8 +11,7 @@
 import EStyleSheet from "react-native-extended-stylesheet";
 
 // TODO Establish a finalized structure
-
-// TODO! IMPORTANT: make sure necessary global variables are defined within your App.js EStyleSheet build
+// TODO iterate throughout below defined styles to match with StyleSheet variables
 
 /**
  * STYLE [0] BASIC
@@ -21,7 +20,7 @@ import EStyleSheet from "react-native-extended-stylesheet";
 const basic = EStyleSheet.create({
 	container: {
 			flex: 1,
-			backgroundColor: '#fff',
+			backgroundColor: '$colorBackground',
 			alignItems: 'center',
 			justifyContent: 'center',
 		},
@@ -54,7 +53,7 @@ const palette = EStyleSheet.create({
  */
 const typography = EStyleSheet.create({
 	// TODO implement common title, label and paragraph types styling here
-  labelSectionDefault: { // TODO reconsider mitigating to own component
+  titleSectionDefault: { // TODO reconsider mitigating to own component
     paddingVertical: 20, // Temporary
     color: '$colorPrimary',
     fontSize: 32,
@@ -62,18 +61,19 @@ const typography = EStyleSheet.create({
     alignSelf: 'center',
   },
 	labelHeaderCommon: { // TODO reconsider mitigating to own component
-    color: '#fff', // TODO: adjust color
+    color: '$colorBackground',
     fontSize: 26,
     fontWeight: 'bold',
   },
-	labelTitleDefault: { // TODO reconsider
+	titleDefault: { // TODO reconsider
     fontSize: 26,
     fontWeight: 'bold',
     color: '$colorPrimary',
     textAlign: 'center',
   },
 	labelLoggedUser: { // TODO reconsider mitigating to own component or elsewhere
-    fontSize: 16,
+    color: '$colorLabel',
+		fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 20,
   },
@@ -114,38 +114,43 @@ const containers = EStyleSheet.create({
 		left: 0,
 		width: '100vw',
 		height: '100vh',
+		backgroundColor: '$colorBackground',
 		// not introducing padding here as this is the mother container
-		backgroundColor: 'red', // TODO:TEST
 	},
 	containerDefault: { // TODO! consider what this undefined def should b
 		// TODO implement as required
 	},
 	containerPageDefault: { // TODO reconsider
+		backgroundColor: '$colorBackground',
 		flex: 1,
 		//padding: '$paddingPageDefault' // TODO reconsider
 	},
 	containerPageTab: {
+		backgroundColor: '$colorBackground',
     flex: 1,
     //padding: '$paddingPageTab' // TODO reconsider
 	},
   containerSlider: { // TODO reconsider
+		backgroundColor: '$colorBackground',
     flex: 1,
     paddingHorizontal: -10,
     // paddingVertical: 10,
   },
   containerGrid: { // TODO reconsider
+		backgroundColor: '$colorBackground',
     flex: 1,
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
 	containerSectionDefault: { // TODO reconsider
+		backgroundColor: '$colorBackground',
     flex: 1,
     paddingHorizontal: 0,
     // paddingVertical: 20,
   },
-	headerCommon: { // TODO reconsider
+	containerHeaderCommon: { // TODO reconsider
     height: '$heightHeader',
-    backgroundColor: '$colorPrimary', // TODO reconsider
+    backgroundColor: '$colorPrimary',
     justifyContent: 'center',
     alignItems: 'center',
   },

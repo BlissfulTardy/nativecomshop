@@ -23,7 +23,7 @@ const SectionSerializerLabeled = ({ title, data, containerStyle, renderItem, key
       {/* SECTION TITLE */}
       { title &&
         (
-          <Text style={PROJECT_STYLES.typography['labelSectionDefault']}>{title}</Text>
+          <Text style={PROJECT_STYLES.typography['titleSectionDefault']}>{title}</Text>
         )
       }
 

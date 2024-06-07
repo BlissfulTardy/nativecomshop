@@ -11,7 +11,7 @@ import PROJECT_STYLES from '../../styles';
  */
 const HeaderCommon = () => {
   return (
-    <View style={PROJECT_STYLES.containers['headerCommon']}>
+    <View style={PROJECT_STYLES.containers['containerHeaderCommon']}>
         <Text style={PROJECT_STYLES.typography['labelHeaderCommon']}>NativEcom</Text>
     </View>
   )

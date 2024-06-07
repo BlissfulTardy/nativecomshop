@@ -47,7 +47,7 @@ export const buttonGridCategories = EStyleSheet.create({
   },
   labelbuttonGridCategory: {
     fontSize: 20,
-    color: 'white',
+    color: '$colorLabel',
     textAlign: 'center',
   },
 })

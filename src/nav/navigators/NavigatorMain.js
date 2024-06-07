@@ -46,18 +46,18 @@ const StackShared = () => {
   return (
     <Stack.Navigator>
       {/* primary tab (main) pages of the application */}
-      <Stack.Screen name="Home" component={ScreenMainHome} options={{ headerShown: false }} />
-      <Stack.Screen name="Search" component={ScreenMainSearch} options={{ headerShown: false }} />
-      <Stack.Screen name="Cart" component={ScreenMainCart} options={{ headerShown: false }} />
-      <Stack.Screen name="Profile" component={ScreenMainProfile} options={{ headerShown: false }} />
+      <Stack.Screen name="PageHome" component={ScreenMainHome} options={{ headerShown: false }} />
+      <Stack.Screen name="PageSearch" component={ScreenMainSearch} options={{ headerShown: false }} />
+      <Stack.Screen name="PageCart" component={ScreenMainCart} options={{ headerShown: false }} />
+      <Stack.Screen name="PageProfile" component={ScreenMainProfile} options={{ headerShown: false }} />
       {/* secondary (misc) pages of the application */}
-      <Stack.Screen name="DeliveryAddresses" component={ScreenMainDeliveryAddresses} options={{ headerShown: false }} />
-      <Stack.Screen name="Checkout" component={ScreenMainCheckout} options={{ headerShown: false }} />
-      <Stack.Screen name="PaymentMethods" component={ScreenMainPaymentMethods} options={{ headerShown: false }} />
-      <Stack.Screen name="Product" component={ScreenMainProduct} options={{ headerShown: false }} />
-      <Stack.Screen name="Receipts" component={ScreenMainReceipts} options={{ headerShown: false }} />
-      <Stack.Screen name="UserInfo" component={ScreenMainUserinfo} options={{ headerShown: false }} />
-      <Stack.Screen name="CategoryProducts" component={ScreenMainCategoryProducts} options={{ headerShow: false }}/>
+      <Stack.Screen name="PageDeliveryAddresses" component={ScreenMainDeliveryAddresses} options={{ headerShown: false }} />
+      <Stack.Screen name="PageCheckout" component={ScreenMainCheckout} options={{ headerShown: false }} />
+      <Stack.Screen name="PagePaymentMethods" component={ScreenMainPaymentMethods} options={{ headerShown: false }} />
+      <Stack.Screen name="PageProduct" component={ScreenMainProduct} options={{ headerShown: false }} />
+      <Stack.Screen name="PageReceipts" component={ScreenMainReceipts} options={{ headerShown: false }} />
+      <Stack.Screen name="PageUserInfo" component={ScreenMainUserinfo} options={{ headerShown: false }} />
+      <Stack.Screen name="PageCategoryProducts" component={ScreenMainCategoryProducts} options={{ headerShow: false }}/>
     </Stack.Navigator>
   );
 };
@@ -66,7 +66,7 @@ const StackShared = () => {
 const StackHome = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={ScreenMainHome} options={{ headerShown: false }} />
+      <Stack.Screen name="PageHome" component={ScreenMainHome} options={{ headerShown: false }} />
       <Stack.Screen name="Shared" component={StackShared} />
     </Stack.Navigator>
   );
@@ -76,7 +76,7 @@ const StackHome = () => {
 const StackSearch = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Search" component={ScreenMainSearch} options={{ headerShown: false }} />
+      <Stack.Screen name="PageSearch" component={ScreenMainSearch} options={{ headerShown: false }} />
       <Stack.Screen name="Shared" component={StackShared} />
     </Stack.Navigator>
   );
@@ -86,7 +86,7 @@ const StackSearch = () => {
 const StackCart = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Cart" component={ScreenMainCart} options={{ headerShown: false }} />
+      <Stack.Screen name="PageCart" component={ScreenMainCart} options={{ headerShown: false }} />
       <Stack.Screen name="Shared" component={StackShared} />
     </Stack.Navigator>
   );
@@ -96,7 +96,7 @@ const StackCart = () => {
 const StackProfile = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Profile" component={ScreenMainProfile} options={{ headerShown: false }} />
+      <Stack.Screen name="PageProfile" component={ScreenMainProfile} options={{ headerShown: false }} />
       <Stack.Screen name="Shared" component={StackShared} />
     </Stack.Navigator>
   );

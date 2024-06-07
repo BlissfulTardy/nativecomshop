@@ -68,7 +68,7 @@ const ScreenAuthLogin = () => {
             <Text style={PROJECT_STYLES.typography['labelHeaderCommon']}>NativEcom</Text>
 
             {/* TEXT Welcome Message */}
-            <Text style={PROJECT_STYLES.typography['labelTitleDefault']}>Welcome, User!</Text>
+            <Text style={PROJECT_STYLES.typography['titleDefault']}>Welcome, User!</Text>
 
             {/* FORM Login */}
             <View style={screenAuthLogin.containerInputs}>
@@ -120,7 +120,7 @@ export const screenAuthLogin = EStyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '$colorBorder',
     borderRadius: 5,
     padding: 10,
     marginVertical: 10,

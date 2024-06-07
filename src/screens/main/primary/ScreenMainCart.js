@@ -73,7 +73,7 @@ const ScreenMainCart = ({ navigation }) => {
   return (
     <View style={PROJECT_STYLES.containers['containerPageTab']}>
       <View style={PROJECT_STYLES.containers['containerSectionDefault']}>
-        <Text style={PROJECT_STYLES.typography['labelSectionDefault']}>Your Cart</Text>
+        <Text style={PROJECT_STYLES.typography['titleSectionDefault']}>Your Cart</Text>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <SectionSerializerLabeled
@@ -85,19 +85,19 @@ const ScreenMainCart = ({ navigation }) => {
           numColumns={2}
         />
       </ScrollView>
-      <View style={screenMainCartFoot.containerBottomScreenMainCart}>
+      <View style={handleCart.containerHandleCart}>
         <View>
-          <Text style={screenMainCartFoot.priceContaineBottomScreenMainCart}>
+          <Text style={handleCart.priceHandleCart}>
             Total Price: ${totalPrice.toFixed(2)}
           </Text>
         </View>
         <View style={PROJECT_STYLES.spatial['gapVertical10']} />
         {/* ///TODO! implement this as a standalone visual comp and pair with handler functional component */}
-        <View style={screenMainCartFoot.buttonsContainerBottomScreenMainCart}>
-          <Pressable onPress={handleClearCart} style={panelHandleCart.clickables.buttonClearCart}>
+        <View style={handleCart.buttonsHandleCart}>
+          <Pressable onPress={handleClearCart} style={panelHandleCart.buttonClearCart}>
             <Text /*style={styles.buttonText}*/>Clear Cart</Text>
           </Pressable>
-          <Pressable onPress={handleCheckout} style={panelHandleCart.clickables.buttonCheckoutCart}>
+          <Pressable onPress={handleCheckout} style={panelHandleCart.buttonCheckoutCart}>
             <Text /*style={styles.buttonText}*/>Checkout</Text>
           </Pressable>
         </View>
@@ -111,19 +111,21 @@ export default ScreenMainCart;
 
 // TODO* have mitigated component specific styling to own component here
 // TODO? consider pulling remainder stylings in PROJECT_STYLES here
-export const screenMainCartFoot = EStyleSheet.create({
+export const handleCart = EStyleSheet.create({
   // TODO inspect and reconsider implementations here
-  containerBottomScreenMainCart: {
+  containerHandleCart: {
     flexDirection: 'column',
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 10,
   },
-  priceContaineBottomScreenMainCart: {
+  priceHandleCart: {
+    color: '$colorLabel',
     fontSize: 20,
     fontWeight: 'bold',
   },
-  buttonsContainerBottomScreenMainCart: {
+  buttonsHandleCart: {
+    color: '$colorLabel',
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -135,7 +137,7 @@ export const panelHandleCart = EStyleSheet.create({
   // TODO inspect and reconsider implementations here
   buttonClearCart: {
     width: '40%',
-    backgroundColor: '#dc3545', // red
+    backgroundColor: 'red', // red
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 8,
@@ -144,7 +146,7 @@ export const panelHandleCart = EStyleSheet.create({
   },
   buttonCheckoutCart: {
     width: '40%',
-    backgroundColor: '$colorPrimary', // blue
+    backgroundColor: 'blue', // blue
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 8,

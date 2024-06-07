@@ -67,7 +67,7 @@ const ScreenAuthRegister = () => {
             <Text style={PROJECT_STYLES.typography['labelHeaderCommon']}>NativEcom</Text>
 
             {/* TEXT Welcome */}
-            <Text style={PROJECT_STYLES.typography['labelTitleDefault']}>Welcome Abroad!</Text>
+            <Text style={PROJECT_STYLES.typography['titleDefault']}>Welcome Abroad!</Text>
 
             {/* FORM Registration */}
             <View style={PROJECT_STYLES.containers['containerDefault'] /* TODO: find or implement */ }>
@@ -120,7 +120,7 @@ export const screenAuthRegister = EStyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '$colorBorder',
     borderRadius: 5,
     padding: 10,
     marginVertical: 10,

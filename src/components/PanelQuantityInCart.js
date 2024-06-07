@@ -54,7 +54,7 @@ export const panelQuantityInCart = EStyleSheet.create({
   },
 
   textPanelQuantityInCart: {
-    backgroundColor: '#333',
+    backgroundColor: '$colorForeground',
     paddingHorizontal: 15,
     paddingVertical: 5,
     borderRadius: 5,
@@ -71,7 +71,7 @@ export const panelQuantityInCart = EStyleSheet.create({
     borderRadius: 5,
     marginHorizontal: 5,
     aspectRatio: 1,
-    color: '#ddd',
+    color: '$colorLabel',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -85,13 +85,13 @@ export const panelQuantityInCart = EStyleSheet.create({
     minHeight: 30,
     minWidth: 40,
     display: 'flex',
-    backgroundColor: '#EEE',
+    backgroundColor: '$colorBackground',
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   textDisplayPanelQuantityInCart: {
-    color: '#FFF',
+    color: '$colorText',
     textAlign: 'center',
     fontSize: 46,
   },

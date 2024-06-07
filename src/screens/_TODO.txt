@@ -1,0 +1,2 @@
+
+Consider renaming this whole section and screens as 'pages' for better convention

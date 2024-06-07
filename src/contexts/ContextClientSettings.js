@@ -1,5 +1,6 @@
 
 // TODO elaborate on this implementation when working on client settings later on
+// TODO! determine whether this implementation requires a local storage directory and/or setup
 
 // IMPORT React
 import React, { createContext, useState, useEffect, useContext } from 'react';
@@ -24,10 +25,10 @@ const ContextSettings = createContext();
  * @param {Object} props
  * @param {React.ReactNode} props.children - The child components that will be wrapped by the provider.
  * @returns {JSX.Element} The provider component.
- */
+ */ // TODO! reconsider defining default values here
 export const ProviderClientSettings = ({ children }) => {
   const [clientSettings, setClientSettings] = useState({
-    theme: 'light',
+    theme: 'dark',
     language: 'en',
     notificationsEnabled: true,
   });

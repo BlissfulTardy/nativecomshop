@@ -1,0 +1,3 @@
+
+Consider implementing a common file bringing all constants together project-wide
+or consider on which levels/directories the constants could be fragmented into

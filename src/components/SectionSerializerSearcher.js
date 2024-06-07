@@ -33,7 +33,7 @@ const SectionSerializerSearcher = ({ title, data, containerStyle, renderItem, ke
       <View>
         {title && (
           <View>
-            <Text style={PROJECT_STYLES.typography['labelSectionDefault']}>{title}</Text>
+            <Text style={PROJECT_STYLES.typography['titleSectionDefault']}>{title}</Text>
           </View>
         )}
       </View>
@@ -107,7 +107,7 @@ export const sectionSerializerSearcher = EStyleSheet.create({
   searchbarSerializerSearcher: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '$colorForeground',
     borderRadius: 10,
     height: 50,
     marginHorizontal: '10%',
@@ -118,7 +118,7 @@ export const sectionSerializerSearcher = EStyleSheet.create({
     width: '100%',
     height: '100%',
     fontSize: 16,
-    color: '#333',
+    color: '$colorText',
     borderRadius: 10,
     paddingLeft: 10,
   },
@@ -136,6 +136,7 @@ export const sectionSerializerSearcher = EStyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
+    color: '$colorLabel',
   },
   buttonClear: {
     width: '30%',
@@ -145,6 +146,7 @@ export const sectionSerializerSearcher = EStyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
+    color: '$colorLabel',
   },
   buttonSearch: {
     width: '30%',
@@ -154,6 +156,7 @@ export const sectionSerializerSearcher = EStyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
+    color: '$colorLabel',
   },
   containerModal: {
     flex: 1,

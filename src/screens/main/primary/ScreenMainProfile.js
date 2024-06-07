@@ -73,7 +73,7 @@ export const menuProfile = EStyleSheet.create({
   textItemMenuProfile: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#ffffff',
+    color: '$colorText',
     textAlign: 'center',
   },
 })

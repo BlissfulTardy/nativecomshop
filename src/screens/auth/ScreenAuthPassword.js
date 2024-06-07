@@ -66,8 +66,8 @@ const ScreenAuthPassword = () => {
             <Text style={PROJECT_STYLES.typography['labelHeaderCommon']}>NativEcom</Text>
 
             {/* FORM Reset Password */}
-            <Text style={PROJECT_STYLES.typography['labelTitleDefault']}>Forgot Your Password?</Text>
-            <Text style={PROJECT_STYLES.typography['labelSectionDefault']}>Enter your email address below to reset your password.</Text>
+            <Text style={PROJECT_STYLES.typography['titleDefault']}>Forgot Your Password?</Text>
+            <Text style={PROJECT_STYLES.typography['titleSectionDefault']}>Enter your email address below to reset your password.</Text>
             <TextInput
                 style={screenAuthPassword.input}
                 placeholder="Email"
@@ -109,7 +109,7 @@ export const screenAuthPassword = EStyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '$colorBorder',
     borderRadius: 5,
     padding: 10,
     marginVertical: 10,

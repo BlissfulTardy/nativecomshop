@@ -12,22 +12,26 @@ import RoutingAuth from './src/nav/navigators/RoutingAuth';
 import { ProviderClientSettings } from './src/contexts/ContextClientSettings';
 
 // IMPORT Theming Wrapper Component
-import { WrapperTheming } from './styling_variables';
+import { ProviderStyling } from './Styling';
 
 // IMPORT StyleSheet & Styles
 import EStyleSheet from 'react-native-extended-stylesheet';
 import PROJECT_STYLES from './styles';
+
+// IMPORT Utility // TODO remove testing utility when done with
+import ReactErrorBoundary from './src/utilities/blisslib_react/common/ReactErrorBoundary';
 
 export default function App() {
 
   // TODO implement variables and logic if required
   
   return (
-    // TODO reconsider wrapping with main screen component at this level
+    <ReactErrorBoundary> // TODO remove ErrorBoundary after done testing
       <ProviderClientSettings>
-        <WrapperTheming>
+        <ProviderStyling>
           <RoutingAuth/>
-        </WrapperTheming>
+        </ProviderStyling>
       </ProviderClientSettings>
+    </ReactErrorBoundary>
   );
 }

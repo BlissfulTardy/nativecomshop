@@ -6,6 +6,8 @@
  * ///TODO try to improve overall coding convention later on
  */
 
+// TODO consider implementations for better and programmatized handling of colors
+
 /**
  * ///TODO* INTENDED AS AN ADDITIONAL TOP LEVEL STYLING IMPLEMENTATION FOR THEMING PURPOSES
  * pre-defines set of colouring variables for different themes, returning them as a wrapper
@@ -23,35 +25,43 @@ import { useSettings } from './src/contexts/ContextClientSettings';
 import EStyleSheet from "react-native-extended-stylesheet";
 import PROJECT_STYLES from './styles';
 
+// IMPORT Utility
+import { invert as invertColor } from 'polished';
+
+// IMPORT Test Utility // TODO remove testing utility when done with
+import consoleLogOnce from './src/utilities/blisslib_react/common/consoleLogOnce';
+
 ///////////////////////////////////////////////////////////////////////////////
 // EDIT THEMES BELOW
 
 const THEMES = {
   light: {
-    colorBackground: '#ddd',
-    colorForeground: '',
-    colorTitle: '',
+    colorBackground: '#eee',
+    colorForeground: '#ddd',
+    colorLabel: '#111',
     colorText: '#222',
-    colorLink: '',
+    colorLink: '#1a20b6',
+    colorLinkClicked: '#1e217a',
     colorPrimary: '#0059bb',
-    colorSecondary: '',
-    colorTertiary: '',
-    colorBorder: '',
-    colorTintActive: '',
-    colorTintInactive: '',
+    colorSecondary: '#2b5179',
+    colorTertiary: '#253649',
+    colorBorder: '#16253a',
+    colorTintActive: '#005abb',
+    colorTintInactive: '#00000000',
   },
   dark: {
-    colorBackground: '',
-    colorForeground: '',
-    colorTitle: '',
-    colorText: '',
-    colorLink: '',
+    colorBackground: '#222',
+    colorForeground: '#333',
+    colorLabel: '#ddd',
+    colorText: '#eee',
+    colorLink: '1a20b6',
+    colorLinkClicked: '#1e217a',
     colorPrimary: '#0059bb',
-    colorSecondary: '',
-    colorTertiary: '',
-    colorBorder: '',
-    colorTintActive: '',
-    colorTintInactive: '',
+    colorSecondary: '#2b5179',
+    colorTertiary: '#253649',
+    colorBorder: '#5b92df',
+    colorTintActive: '#005abb',
+    colorTintInactive: '#00000000',
   },
   // TODO? consider futher themes such as high contrast or custom themes etc.
 }
@@ -191,7 +201,7 @@ const BUILDS_LIST = {
 
 const THEME = (theme) => {
   const selected = convertBuild(THEMES[theme]);
-  console.log(`buildTheme:`, selected); // TODO:TESTLOG
+  console.log(`client buildTheme:`, selected); // TODO:TESTLOG
   return selected;
 }
 
@@ -207,9 +217,11 @@ const buildStyleSheet = (currBuild) => {
   EStyleSheet.build({$outline: 1, ...currBuild})
 }
 
-export const WrapperTheming = ({ children }) => {
+export const ProviderStyling = ({ children }) => {
+  
   // Use the useSettings hook to access client settings
   const { clientSettings, updateSettings } = useSettings();
+  console.log(`clientSettings:`, clientSettings); // TODO:TESTLOG
 
   // Extract theme from clientSettings
   const clientTheme = clientSettings.theme;
@@ -226,8 +238,6 @@ export const WrapperTheming = ({ children }) => {
 
   // RETURN WRAPPER
   return(
-    <View style={PROJECT_STYLES.containers['containerScreen']}>
-      {children}
-    </View>
+    <>{children}</>
   );
 };

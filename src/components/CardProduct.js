@@ -54,10 +54,10 @@ export default CardProduct;
 export const cardProduct = EStyleSheet.create({
   // TODO inspect and reconsider implementations here
   cardProduct: {
-    backgroundColor: '#fff',
+    backgroundColor: '$colorForeground',
     borderRadius: '10px',
     borderWidth: '1px',
-    borderColor: '#ddd',
+    borderColor: '$colorBorder',
     padding: '10px',
     margin: '5px',
     width: '45vw',
@@ -74,7 +74,7 @@ export const cardProduct = EStyleSheet.create({
   categoryCardProduct: {
     fontSize: 14,
     marginTop: 5,
-    color: '#666',
+    color: '$colorSecondary',
   },
   priceCardProduct: {
     fontSize: 16,
