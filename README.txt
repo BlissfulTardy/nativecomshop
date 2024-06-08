@@ -1,9 +1,9 @@
 
-```
+```markdown
 # NativeComShop Project
 
 ## Project Overview
-Welcome to the NativeComShop project! This is a React Native project designed to provide a comprehensive e-commerce experience. This project leverages various modern libraries and tools to ensure a robust and scalable application.
+Welcome to the NativeComShop project! This is a React Native project designed to provide a comprehensive e-commerce experience. The project leverages various modern libraries and tools to ensure a robust and scalable application.
 
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
@@ -15,18 +15,18 @@ Before you begin, ensure you have met the following requirements:
 
 ### 1. Clone the Repository
 Clone the repository to your local machine using the following command:
-```
+```bash
 git clone https://github.com/yourusername/nativecomshop.git
 cd nativecomshop
 ```
 
 ### 2. Install Dependencies
 Navigate to the project directory and install the required npm packages:
-```
+```bash
 npm install
 ```
 or if you are using yarn:
-```
+```bash
 yarn install
 ```
 
@@ -34,6 +34,7 @@ yarn install
 Below is the list of npm packages required for this project:
 - `@babel/core@7.24.6`
 - `@expo/metro-runtime@3.2.1`
+- `@react-native-async-storage/async-storage@1.23.1`
 - `@react-navigation/bottom-tabs@6.5.20`
 - `@react-navigation/native@6.1.17`
 - `@react-navigation/stack@6.3.29`
@@ -45,7 +46,9 @@ Below is the list of npm packages required for this project:
 - `expo@51.0.9`
 - `firebase@10.12.2`
 - `papaparse@5.4.1`
+- `polished@4.3.1`
 - `react-dom@18.2.0`
+- `react-error-boundary@4.0.13`
 - `react-native-extended-stylesheet@0.12.0`
 - `react-native-gesture-handler@2.16.2`
 - `react-native-safe-area-context@4.10.4`
@@ -63,14 +66,14 @@ These dependencies are listed in the `package.json` file and will be installed a
 
 ## Running the Project
 To start the project, use the following command:
-```
+```bash
 expo start
 ```
 This will start the Expo development server, and you can run the project on your emulator or physical device.
 
 ## Building the Project
 To create a production build of the project, use the following command:
-```
+```bash
 expo build
 ```
 Follow the instructions provided by Expo to generate the build for your target platform (iOS, Android, or Web).
@@ -84,6 +87,7 @@ If you have any questions or need further assistance, please contact [your email
 Thank you for using NativeComShop!
 ```
 
----
-
-Save the above content into a file named `README.txt` in the root directory of your project. This file provides clear instructions on setting up and running the project, including all necessary dependencies and commands.
+### Summary of Updates:
+- Added `@react-native-async-storage/async-storage` and `react-error-boundary` to the list of dependencies.
+- Ensured the dependency versions match the latest versions you provided.
+- Minor formatting adjustments for clarity.

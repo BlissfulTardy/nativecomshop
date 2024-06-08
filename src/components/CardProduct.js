@@ -17,6 +17,15 @@ import PanelCartItemQuantityHandler from './PanelCartlItemQuantityHandler';
 
 // COMPONENT RENDER FUNCTION
 const CardProduct = ({ item, handlerClientCart, onPress }) => {
+
+  // TODO! remove temporary testlog after done with
+  console.log(`card item: `, item); // TODO:TESTLOG
+  console.log(`card cart handler: `, handlerClientCart); // TODO:TESTLOG
+
+  // TODO experimenting declaring this here
+  const instanceHandlerClientCart = new handlerClientCart();
+  console.log(`handler instance: `, instanceHandlerClientCart);
+
   return (
     // HANDLES HANDLING APPROPRIATE ONPRESS HANDLER AS A FUNCTION PARAMETER
     <Pressable onPress={onPress} style={cardProduct.cardProduct}>

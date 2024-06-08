@@ -21,6 +21,14 @@ import { utilsMain } from '../nav/applets/AppletMain';
 
 const PanelCartItemQuantityHandler = ({ item, handlerClientCart }) => {
 
+  // TODO! remove temporary testlog after done with
+  console.log(`panel item: `, item); // TODO:TESTLOG
+  console.log(`panel cart handler: `, handlerClientCart); // TODO:TESTLOG
+
+  // TODO experimenting declaring this here
+  const instanceHandlerClientCart = new handlerClientCart();
+  console.log(`handler instance: `, instanceHandlerClientCart);
+
   const dispatch = useDispatch();
 
   const DISABLE_DECREMENT = item.quantity <= 0;
@@ -68,7 +76,6 @@ const PanelCartItemQuantityHandler = ({ item, handlerClientCart }) => {
 };
 
 export default PanelCartItemQuantityHandler;
-
 
 export const itemCartCount = EStyleSheet.create({
   // TODO reconsider implementations here

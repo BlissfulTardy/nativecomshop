@@ -28,6 +28,9 @@ import { fakeFetchProducts, fakeFetchCategories } from './../../../utils/project
 // SCREEN COMPONENT
 const PageMainSearch = () => {
 
+  // RECEIVE Fetched Data From Above
+  const { products, categories } = useFetchedDataFake();
+
   // COMPONENT COMPOSITION
   return (
     /* PAGE CONTAINER */
@@ -36,13 +39,14 @@ const PageMainSearch = () => {
     {/* SEARCHER SECTION COMPONENT */}
       <SectionSerializerSearcher
         title="Search Products"
-        data={fakeFetchProducts()} // TODO! replace dummy implementation
+        data={products} // TODO! replace dummy implementation
         containerStyle={'containerScroller'}
-        renderItem={
+        renderItem={({ item }) => (
           <CardProduct
-          cart={utilsMain.CLIENT_CART}
+            item={item}
+            cart={HandlerClientCart}
           />
-        }
+        )}
         keyExtractor={(item) => item.id.toString()}
         horizontal={false}
         showsScrollIndicator={false}

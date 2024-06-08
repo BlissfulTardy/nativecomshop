@@ -13,13 +13,15 @@ import { useSelector } from 'react-redux';
 import PROJECT_STYLES from '../../../../styles';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-// IMPORT API
-// TODO! import updated counterparts when ready
-import { fakeFetchProducts, fakeFetchCategories } from '../../../utils/project/api/fakeFetcher';
-
 // IMPORT COMPONENTS
 import CardProduct from '../../../components/CardProduct';
 import SectionSerializerLabeled from '../../../components/SectionSerializerLabeled';
+
+// IMPORT HANDLER
+import HandlerClientCart from '../../../utils/project/handlers/HandlerClientCart';
+
+// IMPORT CONTEXT
+import { useFetchedDataFake } from '../../../contexts/ContextFetchedDataFake';
 
 // IMPORT REDUCER
 import reducerClientCart from '../../../store/reducers/reducerClientCart';
@@ -29,7 +31,8 @@ import { dataMain, utilsMain } from '../../../nav/applets/AppletMain';
 
 const PageMainCart = ({ navigation }) => {
 
-  // HANDLE cart via reducer and handler
+  // RECEIVE Fetched Data From Above
+  const { products, categories } = useFetchedDataFake();
 
   // TODO! mitigate this to its own component later on
   const handleProductOnPress = (product) => {
@@ -44,12 +47,12 @@ const PageMainCart = ({ navigation }) => {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <SectionSerializerLabeled
-          data={fakeFetchProducts()} // TODO! replace this dummy implementation
+          data={products} // TODO! replace this dummy implementation
           containerStyle={'containerScroller'}
           renderItem={({ item }) => (
             <CardProduct
-              //product={item}
-              cart={utilsMain.CLIENT_CART}
+              item={item}
+              cart={HandlerClientCart}
             />
           )}
           keyExtractor={(item) => item.id.toString()}

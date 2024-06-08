@@ -24,6 +24,9 @@ import reducerClientCart from '../../../store/reducers/reducerClientCart';
 import HandlerClientCart from '../../../utils/project/handlers/HandlerClientCart';
 import HandlerShopData from '../../../utils/project/handlers/HandlerShopData';
 
+// IMPORT Context
+import { useFetchedDataFake } from '../../../contexts/ContextFetchedDataFake';
+
 import { statesMain, utilsMain, dataMain } from '../../../nav/applets/AppletMain';
 
 // IMPORT COMPONENTS
@@ -36,7 +39,10 @@ import { useDispatch } from 'react-redux';
 // SCREEN COMPONENT
 const PageMainHome = () => {
 
-  dispatch = useDispatch()
+  dispatch = useDispatch(); // TODO remove if obsolete
+
+  // RECEIVE Fetched Data From Above
+  const { products, categories } = useFetchedDataFake();
 
   // COMPONENT COMPOSITION
   return (
@@ -50,13 +56,14 @@ const PageMainHome = () => {
       {/* POPULAR ITEMS SLIDER SECTION */}
       <SectionSerializerLabeled
         title={'Popular'}
-        data={fakeFetchProducts(50)} // TODO! replace dummy implementation
+        data={products} // TODO! replace dummy implementation
         containerStyle={'containerSlider'}
-        renderItem={
+        renderItem={({ item }) => ( // TODO!!! CONTINUE DEBUGGING FROM HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           <CardProduct
-          cart={utilsMain.CLIENT_CART}
+            item={item}
+            cart={HandlerClientCart}
           />
-        }
+        )}
         keyExtractor={(item, index) => index.toString()}
         horizontal={true}
       />
@@ -64,7 +71,7 @@ const PageMainHome = () => {
       {/* CATEGORIES GRID */}
       <SectionSerializerLabeled
         title={'Categories'}
-        data={fakeFetchCategories()} // TODO! replace dummy implementation
+        data={categories} // TODO! replace dummy implementation
         containerStyle={'containerGrid'}
         renderItem={ButtonGridCategories}
         keyExtractor={(item, index) => index.toString()}

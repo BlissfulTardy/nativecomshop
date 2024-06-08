@@ -19,7 +19,8 @@ import { useSelector } from 'react-redux';
 // IMPORT Handler
 import HandlerShopData from '../../utils/project/handlers/HandlerShopData';
 
-// IMPORT Provider
+// IMPORT Context Provider
+import { ProviderFetchedDataFake } from '../../contexts/ContextFetchedDataFake';
 import { ProviderShopData } from '../../contexts/ContextShopData';
 import { ProviderClientCart } from '../../contexts/ContextClientCart';
 // ?? import { ProviderClientSettings } from '../../contexts/ContextClientSetings';
@@ -31,31 +32,63 @@ import { useDispatch } from 'react-redux';
 
 // APPLET main component
 const AppletMain = ({ states, utils, data }) => {
-  const [init, setInit] = useState(true);
+
   const dispatch = useDispatch();
 
+  // TODO REPLACE DUMMY DATABASE FETCING IMPLEMENTATION WITH ACTUAL WHEN READY ////////////////////
+
+  // TODO* dummy flag state whether app is currently initiating
+  const [init, setInit] = useState(true);
+  // TODO* dummy flag state variable for data fetch initiations
+  const [fetching, setFetching] = useState(false);
+
+  const [productsFake, setProductsFake] = useState([]);
+  const [categoriesFake, setCategoriesFake] = useState([]);
+
+  // TODO* initialization fetch call useEffect to be fired once only
   useEffect(() => {
-    if (init) {
-      const fetchData = async () => {
-        const fetchedProducts = await fakeFetchProducts(50);
-        console.log('Fetched products:', fetchedProducts);
-        HandlerShopData.setProducts(dispatch, fetchedProducts);
+    if (init || fetching) {
+      console.log(`commencing data fetch...`); // TODO:TESTLOG
 
-        const fetchedCategories = await fakeFetchCategories();
-        console.log('Fetched categories:', fetchedCategories);
-        HandlerShopData.setCategories(dispatch, fetchedCategories);
+      // Fetch products
+      fakeFetchProducts()
+        .then(responseProductsFake => {
+          console.log(`fetched products (fake): `, responseProductsFake); // TODO:TESTLOG
+          setProductsFake(responseProductsFake);
+        })
+        .catch(error => {
+          console.error('Error fetching products:', error);
+        });
 
-        setInit(false);
-      };
-      fetchData();
+      // Fetch categories
+      fakeFetchCategories()
+        .then(responseCategoriesFake => {
+          console.log(`fetched categories (fake) `, responseCategoriesFake); // TODO:TESTLOG
+          setCategoriesFake(responseCategoriesFake);
+        })
+        .catch(error => {
+          console.error('Error fetching categories:', error);
+        });
+
+      console.log(`assigning fetched data...`); // TODO:TESTLOG
+
+      // Set fetching and initialization states
+      setFetching(false);
+      setInit(false);
+      console.log(`data fetch complete!`); // TODO:TESTLOG
     }
-  }, [init, dispatch]);
+  }, [init]); // Only run this effect once when `init` is true
+
+  // TODO REPLACE DUMMY DATABASE FETCING IMPLEMENTATION WITH ACTUAL WHEN READY ////////////////////
 
   return (
-    <View style={PROJECT_STYLES.containers['containerScreen']}>
-      <HeaderCommon/>
-      <NavigatorMain/>
-    </View>
+    // TODO* Providing Fetched Fake Data
+    <ProviderFetchedDataFake>
+      <View style={PROJECT_STYLES.containers['containerScreen']}>
+        <HeaderCommon/>
+        <NavigatorMain/>
+      </View>
+    </ProviderFetchedDataFake>
   );
 };
 
