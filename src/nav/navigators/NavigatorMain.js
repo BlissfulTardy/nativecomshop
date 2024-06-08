@@ -13,19 +13,19 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 // IMPORT Main Primary Screens
-import ScreenMainHome from '../../screens/main/primary/ScreenMainHome';
-import ScreenMainSearch from '../../screens/main/primary/ScreenMainSearch';
-import ScreenMainCart from '../../screens/main/primary/ScreenMainCart';
-import ScreenMainProfile from '../../screens/main/primary/ScreenMainProfile';
+import PageMainHome from '../../pages/main/primary/PageMainHome';
+import PageMainSearch from '../../pages/main/primary/PageMainSearch';
+import PageMainCart from '../../pages/main/primary/PageMainCart';
+import PageMainProfile from '../../pages/main/primary/PageMainProfile';
 
 // IMPORT Main Secondary Screens
-import ScreenMainDeliveryAddresses from '../../screens/main/secondary/ScreenMainDeliveryAddresses';
-import ScreenMainCheckout from '../../screens/main/secondary/ScreenMainCheckout';
-import ScreenMainPaymentMethods from '../../screens/main/secondary/ScreenMainPaymentMethods';
-import ScreenMainProduct from '../../screens/main/secondary/ScreenMainProduct';
-import ScreenMainReceipts from '../../screens/main/secondary/ScreenMainReceipts';
-import ScreenMainUserinfo from '../../screens/main/secondary/ScreenMainUserinfo';
-import ScreenMainCategoryProducts from '../../screens/main/secondary/ScreenMainCategoryProducts';
+import PageMainDeliveryAddresses from '../../pages/main/secondary/PageMainDeliveryAddresses';
+import PageMainCheckout from '../../pages/main/secondary/PageMainCheckout';
+import PageMainPaymentMethods from '../../pages/main/secondary/PageMainPaymentMethods';
+import PageMainProduct from '../../pages/main/secondary/PageMainProduct';
+import PageMainReceipts from '../../pages/main/secondary/PageMainReceipts';
+import PageMainUserinfo from '../../pages/main/secondary/PageMainUserinfo';
+import PageMainCategoryProducts from '../../pages/main/secondary/PageMainCategoryProducts';
 
 // DECLARE Tab Navigation
 const Tab = createBottomTabNavigator();
@@ -46,18 +46,18 @@ const StackShared = () => {
   return (
     <Stack.Navigator>
       {/* primary tab (main) pages of the application */}
-      <Stack.Screen name="PageHome" component={ScreenMainHome} options={{ headerShown: false }} />
-      <Stack.Screen name="PageSearch" component={ScreenMainSearch} options={{ headerShown: false }} />
-      <Stack.Screen name="PageCart" component={ScreenMainCart} options={{ headerShown: false }} />
-      <Stack.Screen name="PageProfile" component={ScreenMainProfile} options={{ headerShown: false }} />
+      <Stack.Screen name="PageHome" component={PageMainHome} options={{ headerShown: false }} />
+      <Stack.Screen name="PageSearch" component={PageMainSearch} options={{ headerShown: false }} />
+      <Stack.Screen name="PageCart" component={PageMainCart} options={{ headerShown: false }} />
+      <Stack.Screen name="PageProfile" component={PageMainProfile} options={{ headerShown: false }} />
       {/* secondary (misc) pages of the application */}
-      <Stack.Screen name="PageDeliveryAddresses" component={ScreenMainDeliveryAddresses} options={{ headerShown: false }} />
-      <Stack.Screen name="PageCheckout" component={ScreenMainCheckout} options={{ headerShown: false }} />
-      <Stack.Screen name="PagePaymentMethods" component={ScreenMainPaymentMethods} options={{ headerShown: false }} />
-      <Stack.Screen name="PageProduct" component={ScreenMainProduct} options={{ headerShown: false }} />
-      <Stack.Screen name="PageReceipts" component={ScreenMainReceipts} options={{ headerShown: false }} />
-      <Stack.Screen name="PageUserInfo" component={ScreenMainUserinfo} options={{ headerShown: false }} />
-      <Stack.Screen name="PageCategoryProducts" component={ScreenMainCategoryProducts} options={{ headerShow: false }}/>
+      <Stack.Screen name="PageDeliveryAddresses" component={PageMainDeliveryAddresses} options={{ headerShown: false }} />
+      <Stack.Screen name="PageCheckout" component={PageMainCheckout} options={{ headerShown: false }} />
+      <Stack.Screen name="PagePaymentMethods" component={PageMainPaymentMethods} options={{ headerShown: false }} />
+      <Stack.Screen name="PageProduct" component={PageMainProduct} options={{ headerShown: false }} />
+      <Stack.Screen name="PageReceipts" component={PageMainReceipts} options={{ headerShown: false }} />
+      <Stack.Screen name="PageUserInfo" component={PageMainUserinfo} options={{ headerShown: false }} />
+      <Stack.Screen name="PageCategoryProducts" component={PageMainCategoryProducts} options={{ headerShow: false }}/>
     </Stack.Navigator>
   );
 };
@@ -66,7 +66,7 @@ const StackShared = () => {
 const StackHome = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="PageHome" component={ScreenMainHome} options={{ headerShown: false }} />
+      <Stack.Screen name="PageHome" component={PageMainHome} options={{ headerShown: false }} />
       <Stack.Screen name="Shared" component={StackShared} />
     </Stack.Navigator>
   );
@@ -76,7 +76,7 @@ const StackHome = () => {
 const StackSearch = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="PageSearch" component={ScreenMainSearch} options={{ headerShown: false }} />
+      <Stack.Screen name="PageSearch" component={PageMainSearch} options={{ headerShown: false }} />
       <Stack.Screen name="Shared" component={StackShared} />
     </Stack.Navigator>
   );
@@ -86,7 +86,7 @@ const StackSearch = () => {
 const StackCart = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="PageCart" component={ScreenMainCart} options={{ headerShown: false }} />
+      <Stack.Screen name="PageCart" component={PageMainCart} options={{ headerShown: false }} />
       <Stack.Screen name="Shared" component={StackShared} />
     </Stack.Navigator>
   );
@@ -96,7 +96,7 @@ const StackCart = () => {
 const StackProfile = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="PageProfile" component={ScreenMainProfile} options={{ headerShown: false }} />
+      <Stack.Screen name="PageProfile" component={PageMainProfile} options={{ headerShown: false }} />
       <Stack.Screen name="Shared" component={StackShared} />
     </Stack.Navigator>
   );

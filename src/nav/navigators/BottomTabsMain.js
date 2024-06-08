@@ -19,10 +19,10 @@ import PROJECT_STYLES from '../../../styles';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 // IMPORT MAIN SCREENS
-import ScreenMainHome from '../../screens/main/primary/ScreenMainHome';
-import ScreenMainSearch from '../../screens/main/primary/ScreenMainSearch';
-import ScreenMainCart from '../../screens/main/primary/ScreenMainCart';
-import ScreenMainProfile from '../../screens/main/primary/ScreenMainProfile';
+import PageMainHome from '../../pages/main/primary/PageMainHome';
+import PageMainSearch from '../../pages/main/primary/PageMainSearch';
+import PageMainCart from '../../pages/main/primary/PageMainCart';
+import PageMainProfile from '../../pages/main/primary/PageMainProfile';
 
 // IMPORT HEADER
 import HeaderCommon from '../../components/HeaderCommon';
@@ -80,10 +80,10 @@ const BottomTabsMain = () => {
             >
 
               {/* APPLICATION MAIN SCREENS */}
-              <Tab.Screen name="Home" component={ScreenMainHome} />
-              <Tab.Screen name="Search" component={ScreenMainSearch} />
-              <Tab.Screen name="Cart" component={ScreenMainCart} />
-              <Tab.Screen name="Profile" component={ScreenMainProfile} />
+              <Tab.Screen name="Home" component={PageMainHome} />
+              <Tab.Screen name="Search" component={PageMainSearch} />
+              <Tab.Screen name="Cart" component={PageMainCart} />
+              <Tab.Screen name="Profile" component={PageMainProfile} />
 
             </Tab.Navigator>
 

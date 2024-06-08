@@ -1,9 +1,0 @@
-
-// TODO! mitigate previous implementation here as a standalone component
-
-// TODO introduce props as reqired
-const handlerCart = () => {
-  return(null);
-}
-
-export default handlerCart

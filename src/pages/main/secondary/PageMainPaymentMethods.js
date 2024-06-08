@@ -2,8 +2,8 @@
 // TODO! implement this
 // TODO! introduce component properties if required
 
-const ScreenMainPaymentMethods = () => {
+const PageMainPaymentMethods = () => {
 
 }
 
-export default ScreenMainPaymentMethods;
+export default PageMainPaymentMethods;

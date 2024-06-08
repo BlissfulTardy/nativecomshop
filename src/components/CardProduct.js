@@ -13,13 +13,10 @@ import PROJECT_STYLES from './../../styles';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 // IMPORT COMPONENT
-// TODO! import counterpart when ready
-/*
-import CartItemQuantityHandler from './CartItemQuantityHandler';
-*/
+import PanelCartItemQuantityHandler from './PanelCartlItemQuantityHandler';
 
 // COMPONENT RENDER FUNCTION
-const CardProduct = ({ item, onPress, onIncrease, onDecrease }) => {
+const CardProduct = ({ item, handlerClientCart, onPress }) => {
   return (
     // HANDLES HANDLING APPROPRIATE ONPRESS HANDLER AS A FUNCTION PARAMETER
     <Pressable onPress={onPress} style={cardProduct.cardProduct}>
@@ -40,8 +37,9 @@ const CardProduct = ({ item, onPress, onIncrease, onDecrease }) => {
       {/* PRODUCT PRICE */}
       <Text style={cardProduct.priceCardProduct}>${item.price}</Text>
       {/* CART ITEM QUANTITY HANDLER */}
-      <CartItemQuantityHandler
+      <PanelCartItemQuantityHandler
         item={item}
+        handlerClientCart={handlerClientCart}
       />
     </Pressable>
   );
@@ -63,28 +61,31 @@ export const cardProduct = EStyleSheet.create({
     width: '45vw',
   },
   nameCardProduct: {
+    color: '$colorLabel',
     fontSize: 16,
     fontWeight: 'bold',
     marginTop: 5,
   },
   descriptionCardProduct: {
+    color: '$colorText',
     fontSize: 14,
     marginTop: 5,
   },
   categoryCardProduct: {
+    color: '$colorText',
     fontSize: 14,
     marginTop: 5,
-    color: '$colorSecondary',
   },
   priceCardProduct: {
+    color: '$colorText',
     fontSize: 16,
     fontWeight: 'bold',
     marginTop: 5,
   },
   imageCardProduct: {
-    width: '100%',
-    height: 150,
-    resizeMode: 'cover',
+    height: 150, // TODO reconsider
+    resizeMode: 'contain',
+    backgroundColor: '#FFFFFF', // TODO reconsider
     borderRadius: 10,
   },
 })

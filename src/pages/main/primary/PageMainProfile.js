@@ -17,7 +17,7 @@ import { useNavigation } from '@react-navigation/native';
 ///////////////////////////////////////////////////////////////////////////////
 
 // SCREEN COMPONENT
-const ScreenMainProfile = () => {
+const PageMainProfile = () => {
   
   // TODO! inspect and reconsider this current routing implementation
   const navigation = useNavigation();
@@ -53,7 +53,7 @@ const ScreenMainProfile = () => {
   );
 };
 
-export default ScreenMainProfile;
+export default PageMainProfile;
 
 // TODO mitigate this to own component if decided to implement standalone
 export const menuProfile = EStyleSheet.create({

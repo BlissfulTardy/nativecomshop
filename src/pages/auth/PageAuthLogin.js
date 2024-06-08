@@ -34,7 +34,7 @@ import PROJECT_STYLES from '../../../styles';
  * Login screen of the application
  * @returns
  */
-const ScreenAuthLogin = () => {
+const PageAuthLogin = () => {
 
     // NAVIGATION
     const navigation = useNavigation();
@@ -106,7 +106,7 @@ const ScreenAuthLogin = () => {
 
 };
 
-export default ScreenAuthLogin;
+export default PageAuthLogin;
 
 // TODO consider merging with other auth screen styling objects
 // TODO* have mitigated component specific styling to own component here

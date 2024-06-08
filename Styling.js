@@ -29,7 +29,7 @@ import PROJECT_STYLES from './styles';
 import { invert as invertColor } from 'polished';
 
 // IMPORT Test Utility // TODO remove testing utility when done with
-import consoleLogOnce from './src/utilities/blisslib_react/common/consoleLogOnce';
+import consoleLogOnce from './src/utils/blisslib_react/common/consoleLogOnce';
 
 ///////////////////////////////////////////////////////////////////////////////
 // EDIT THEMES BELOW
@@ -214,7 +214,7 @@ console.log(`BUILDS:`, BUILDS); // TODO:TESTLOG
 
 // METHOD Building StyleSheet
 const buildStyleSheet = (currBuild) => {
-  EStyleSheet.build({$outline: 1, ...currBuild})
+  EStyleSheet.build({/*$outline: 1,*/ ...currBuild})
 }
 
 export const ProviderStyling = ({ children }) => {

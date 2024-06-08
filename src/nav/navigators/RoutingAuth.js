@@ -58,16 +58,16 @@ const RoutingAuth = () => {
 				{
 				user ?
 				<AppletMain
-				states={null}
-				utils={null}
-				data={null}
+				states={AppletMain.statesMain}
+				utils={AppletMain.utilsMain}
+				data={AppletMain.dataMain}
 				// TODO take props as needed
 				/>
 				:
 				<AppletAuth
-				states={null}
-				utils={null}
-				data={null}
+				states={AppletAuth.statesAuth}
+				utils={AppletAuth.statesAuth}
+				data={AppletAuth.dataAuth}
 				// TODO take props as needed
 				/>
 				}

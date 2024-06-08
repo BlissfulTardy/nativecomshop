@@ -19,19 +19,19 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import PROJECT_STYLES from './styles';
 
 // IMPORT Utility // TODO remove testing utility when done with
-import ReactErrorBoundary from './src/utilities/blisslib_react/common/ReactErrorBoundary';
+import ReactErrorBoundary from './src/utils/blisslib_react/common/ReactErrorBoundary';
 
 export default function App() {
 
   // TODO implement variables and logic if required
   
   return (
-    <ReactErrorBoundary> // TODO remove ErrorBoundary after done testing
+    //<ReactErrorBoundary> // TODO remove ErrorBoundary after done testing
       <ProviderClientSettings>
         <ProviderStyling>
           <RoutingAuth/>
         </ProviderStyling>
       </ProviderClientSettings>
-    </ReactErrorBoundary>
+    //</ReactErrorBoundary>
   );
 }

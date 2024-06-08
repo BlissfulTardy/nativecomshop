@@ -1,7 +1,4 @@
 
-// TODO elaborate on this implementation when working on client settings later on
-// TODO! determine whether this implementation requires a local storage directory and/or setup
-
 // IMPORT React
 import React, { createContext, useState, useEffect, useContext } from 'react';
 // IMPORT AsyncStorage
@@ -16,7 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 /**
  * Context for client settings.
- * @type {React.Context<{clientSettings: Settings, updateSettings: (key: string, value: any) => void}>}
+ * @type {React.Context<{clientSettings: Settings, setClientSettings: (key: string, value: any) => void}>}
  */
 const ContextSettings = createContext();
 
@@ -79,7 +76,7 @@ export const ProviderClientSettings = ({ children }) => {
   };
 
   return (
-    <ContextSettings.Provider value={{ clientSettings, updateSettings }}>
+    <ContextSettings.Provider value={{ clientSettings, setClientSettings }}>
       {children}
     </ContextSettings.Provider>
   );
@@ -87,6 +84,6 @@ export const ProviderClientSettings = ({ children }) => {
 
 /**
  * Custom hook to use the client settings.
- * @returns {{clientSettings: Settings, updateSettings: (key: string, value: any) => void}} The settings and updateSettings function.
+ * @returns {{clientSettings: Settings, setClientSettings: (key: string, value: any) => void}} The settings and updateSettings function.
  */
 export const useSettings = () => useContext(ContextSettings);

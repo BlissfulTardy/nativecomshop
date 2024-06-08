@@ -36,7 +36,7 @@ import PROJECT_STYLES from '../../../styles';
  * Password reset page of the application
  * @returns 
  */
-const ScreenAuthPassword = () => {
+const PageAuthPassword = () => {
 
     // STATE to manage user credentials
     const navigation = useNavigation();
@@ -95,7 +95,7 @@ const ScreenAuthPassword = () => {
     );
 };
 
-export default ScreenAuthPassword;
+export default PageAuthPassword;
 
 // TODO consider merging with other auth screen styling objects
 // TODO* have mitigated component specific styling to own component here

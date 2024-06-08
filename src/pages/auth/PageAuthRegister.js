@@ -36,7 +36,7 @@ import PROJECT_STYLES from '../../../styles';
  * Registration page of the application
  * @returns 
  */
-const ScreenAuthRegister = () => {
+const PageAuthRegister = () => {
 
     // NAVIGATION
     const navigation = useNavigation();
@@ -106,7 +106,7 @@ const ScreenAuthRegister = () => {
     );
 };
 
-export default ScreenAuthRegister;
+export default PageAuthRegister;
 
 // TODO consider merging with other auth screen styling objects
 // TODO* have mitigated component specific styling to own component here

@@ -1,9 +1,9 @@
 
 /**
- * @module actionsCart
+ * @module actionsClientCart
  * describing user cart related operations
  */
-const actionsCart = {
+const actionsClientCart = {
   
   clearCart: () => ({
     type: 'CLEAR_CART',
@@ -33,6 +33,15 @@ const actionsCart = {
     payload: productId,
   }),
 
+  getPriceTotal: () => ({
+    type: 'GET_PRICE_TOTAL',
+  }),
+
+  getProductQuantity: (productId) => ({
+    type: 'GET_PRODUCT_QUANTITY',
+    payload: productId,
+  }),
+
 }
 
-export default actionsCart;
+export default actionsClientCart;

@@ -2,8 +2,8 @@
 // TODO! implement this
 // TODO! introduce component properties if required
 
-const ScreenMainProduct = () => {
+const PageMainCategoryProducts = () => {
 
 }
 
-export default ScreenMainProduct;
+export default PageMainCategoryProducts;

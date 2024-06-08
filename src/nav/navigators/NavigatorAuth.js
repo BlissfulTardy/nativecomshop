@@ -6,10 +6,10 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 // IMPORT Screens
-import ScreenAuthLogin from "../../screens/auth/ScreenAuthLogin";
-import ScreenAuthPassword from "../../screens/auth/ScreenAuthPassword";
-import ScreenAuthProcess from "../../screens/auth/ScreenAuthProcess";
-import ScreenAuthRegister from "../../screens/auth/ScreenAuthRegister";
+import PageAuthLogin from "../../pages/auth/PageAuthLogin";
+import PageAuthPassword from "../../pages/auth/PageAuthPassword";
+import PageAuthProcess from "../../pages/auth/PageAuthProcess";
+import PageAuthRegister from "../../pages/auth/PageAuthRegister";
 // TODO: Determine whether any other imports are required here
 
 // DECLARE Navigation Stack
@@ -30,22 +30,22 @@ const NavigatorAuth = ({ states, utils, data }) => {
       <Stack.Navigator>
         <Stack.Screen
           name="PageLogin"
-          component={ScreenAuthLogin}
+          component={PageAuthLogin}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name="PageRegister"
-          component={ScreenAuthRegister}
+          component={PageAuthRegister}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name="PagePassword"
-          component={ScreenAuthPassword}
+          component={PageAuthPassword}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name="PageProcess"
-          component={ScreenAuthProcess}
+          component={PageAuthProcess}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

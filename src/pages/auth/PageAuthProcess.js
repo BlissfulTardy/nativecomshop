@@ -15,7 +15,7 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 // COMPONENT Elaborated authorization process screen
 // TODO: replace dummy implementation with actula when ready
-const ScreenAuthProcess = () => {
+const PageAuthProcess = () => {
   return (
     <View style={PROJECT_STYLES.containers['containerPageDefault']}>
       <Text>IMPLEMENT ME</Text>
@@ -23,7 +23,7 @@ const ScreenAuthProcess = () => {
   );
 };
 
-export default ScreenAuthProcess;
+export default PageAuthProcess;
 
 // TODO consider merging with other auth screen styling objects
 // TODO* have mitigated component specific styling to own component here

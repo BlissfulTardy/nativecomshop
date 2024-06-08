@@ -2,8 +2,8 @@
 // TODO! implement this
 // TODO! introduce component properties if required
 
-const ScreenMainUserinfo = () => {
+const PageMainCheckout = () => {
 
 }
 
-export default ScreenMainUserinfo;
+export default PageMainCheckout;

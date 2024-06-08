@@ -3,9 +3,11 @@
 // TODO! introduce component properties if required
 
 // IMPORT React
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useDispatch } from 'react';
 // IMPORT React Native
 import { View, Text, ScrollView, Pressable, StyleSheet } from 'react-native';
+// IMPORT React Redux
+import { useSelector } from 'react-redux';
 
 // IMPORT Styles
 import PROJECT_STYLES from '../../../../styles';
@@ -13,59 +15,24 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 // IMPORT API
 // TODO! import updated counterparts when ready
-/*
-import { fakeFetchProducts } from '../../api/fakeFetcher';
-*/
+import { fakeFetchProducts, fakeFetchCategories } from '../../../utils/project/api/fakeFetcher';
 
 // IMPORT COMPONENTS
 import CardProduct from '../../../components/CardProduct';
 import SectionSerializerLabeled from '../../../components/SectionSerializerLabeled';
 
-const ScreenMainCart = ({ navigation }) => {
-  
-  // STATES
-  const [cartProducts, setCartProducts] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+// IMPORT REDUCER
+import reducerClientCart from '../../../store/reducers/reducerClientCart';
 
-  // USE EFFECT IMPLEMENTATION FOR DATA FETCH WITH API
-  // TODO! consider mitigating data fetch entirely elsewhere appropriate
-  // TODO! consider implementing this elsewise however most appropriate
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedProducts = []; // TODO! fetch products here when API method ready
-      console.log("Fetched products:", fetchedProducts); // Track fetched products
-      setCartProducts(fetchedProducts);
-    };
-    fetchData();
-  }, []);
 
-  // TODO! consider implementing a standalone cart management functional component
-  /////////////////////////////////////////////////////////////////////////////
-  // CALCULATE CURRENT CART ITEM PRICE TOTAL
-  // TODO! consider mitigating and/or overhauling this implementation
-  useEffect(() => {
-    let total = 0;
-    cartProducts.forEach((product) => {
-      console.log(typeof product.price); // TESTLOG
-      console.log(product.quantity); // TESTLOG
-      total += product.price * product.quantity;
-      console.log(total); // TESTLOG
-    });
-    console.log("Cart products:", cartProducts); // Track cart products
-    setTotalPrice(total);
-  }, [cartProducts]);
+import { dataMain, utilsMain } from '../../../nav/applets/AppletMain';
 
-  // TODO! consider mitigating or changing handling of these actions
+const PageMainCart = ({ navigation }) => {
 
-  const handleCheckout = () => {
-    navigation.navigate('ScreenAppCheckout');
-  };
+  // HANDLE cart via reducer and handler
 
-  const handleClearCart = () => {
-    setCartProducts([]);
-  };
-
-  const handleProductPress = (product) => {
+  // TODO! mitigate this to its own component later on
+  const handleProductOnPress = (product) => {
     navigation.navigate('ScreenAppProduct', { product });
   };
   /////////////////////////////////////////////////////////////////////////////
@@ -77,9 +44,14 @@ const ScreenMainCart = ({ navigation }) => {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <SectionSerializerLabeled
-          data={cartProducts}
+          data={fakeFetchProducts()} // TODO! replace this dummy implementation
           containerStyle={'containerScroller'}
-          renderItem={CardProduct}
+          renderItem={({ item }) => (
+            <CardProduct
+              //product={item}
+              cart={utilsMain.CLIENT_CART}
+            />
+          )}
           keyExtractor={(item) => item.id.toString()}
           horizontal={false}
           numColumns={2}
@@ -88,16 +60,16 @@ const ScreenMainCart = ({ navigation }) => {
       <View style={handleCart.containerHandleCart}>
         <View>
           <Text style={handleCart.priceHandleCart}>
-            Total Price: ${totalPrice.toFixed(2)}
+            Total Price: ${utilsMain?.CLIENT_CART?.total() ?? 0}
           </Text>
         </View>
         <View style={PROJECT_STYLES.spatial['gapVertical10']} />
         {/* ///TODO! implement this as a standalone visual comp and pair with handler functional component */}
         <View style={handleCart.buttonsHandleCart}>
-          <Pressable onPress={handleClearCart} style={panelHandleCart.buttonClearCart}>
+          <Pressable onPress={utilsMain?.CLIENT_CART?.clear()} style={panelHandleCart.buttonClearCart}>
             <Text /*style={styles.buttonText}*/>Clear Cart</Text>
           </Pressable>
-          <Pressable onPress={handleCheckout} style={panelHandleCart.buttonCheckoutCart}>
+          <Pressable onPress={utilsMain?.CLIENT_CART?.checkout()} style={panelHandleCart.buttonCheckoutCart}>
             <Text /*style={styles.buttonText}*/>Checkout</Text>
           </Pressable>
         </View>
@@ -107,7 +79,7 @@ const ScreenMainCart = ({ navigation }) => {
   );
 };
 
-export default ScreenMainCart;
+export default PageMainCart;
 
 // TODO* have mitigated component specific styling to own component here
 // TODO? consider pulling remainder stylings in PROJECT_STYLES here

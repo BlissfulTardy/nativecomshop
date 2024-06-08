@@ -2,8 +2,8 @@
 // TODO! implement this
 // TODO! introduce component properties if required
 
-const ScreenMainCheckout = () => {
+const PageMainReceipts = () => {
 
 }
 
-export default ScreenMainCheckout;
+export default PageMainReceipts;

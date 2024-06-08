@@ -4,13 +4,13 @@ import { createStore, combineReducers } from 'redux';
 
 // IMPORT Reducers
 // TODO! import reducers when ready
-import reducerCart from './reducers/reducerCart';
-import reducerProduct from './reducers/reducerProduct';
+import reducerClientCart from './reducers/reducerClientCart';
+import reducerShopData from './reducers/reducerShopData';
 
 // ROOT REDUCER
 const reducerRoot = combineReducers({
-  cart: reducerCart,
-  products: reducerProduct,
+  clientCart: reducerClientCart,
+  shopData: reducerShopData,
 });
 
 // STORE initiation

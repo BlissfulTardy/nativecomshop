@@ -1,0 +1,5 @@
+
+Generalize this handler function later on by:
+- generalizing the naming convention
+- establishing a default interface structure
+- intaking everything as props instead of imports etc.
